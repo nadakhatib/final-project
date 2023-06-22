@@ -101,41 +101,46 @@ while True:
                               "6. Exit" ))
 
         if selection == 1:
-    
+            # TODO 10 make sure that Student number is not exists before
+            while True:
+                student_number = input("Enter Student Number")
+                exists = False
+                for student in students:
+                    if student.student_number == student_number:
+                        exists = True
+                        break
 
-        # TODO 10 make sure that Student number is not exists before
-        student_number = input("Enter Student Number")
-        exists = False
-        for student in students:
-            if student.student_number == student_number:
-                exists = True
-                break
+                if exists:
+                    print("Student number exists , enter another number .")
+                else:
+                    break
 
-        if exists:
-            print("Student number exists , enter another number .")
-        else:
-            break
+                student_name = input("Enter Student Name")
+                while True:
+                    try:
+                        student_age = int(input("Enter Student Age"))
+                        break
+                    except:
+                        print("Invalid Value")
 
-        student_name = input("Enter Student Name")
-        while True:
-            try:
-                student_age = int(input("Enter Student Age"))
-                break
-            except:
-                print("Invalid Value")
+            # TODO 11 create student object and append it to students list
+                new_student = Student(student_name, student_age, student_number, [])
+                students.append(new_student)
 
-        # TODO 11 create student object and append it to students list
-        new_student = Student(student_name, student_age, student_number, [])
-        students.append(new_student)
+                print("Student Added Successfully")
 
-        print("Student Added Successfully")
 
-    elif selection == 2:
-        student_number = input("Enter Student Number")
+
+
+
+        elif selection == 2:
+         student_number = input("Enter Student Number: ")
+
+
         # TODO 12 find the target student using loops and delete it if exist , if not print ("Student Not Exist")
 
-    elif selection == 3:
-        student_number = input("Enter Student Number")
+        elif selection == 3:
+         student_number = input("Enter Student Number")
 
         found = False
         for student in students:
@@ -145,7 +150,7 @@ while True:
                 print("Student Deleted Successfully")
                 break
 
-       if not found:
+        if not found:
            print("Student Not Exist")
 
 
@@ -153,8 +158,8 @@ while True:
 
 
 
-    elif selection == 4:
-        student_number = input("Enter Student Number")
+        elif selection == 4:
+         student_number = input("Enter Student Number")
 
         found = False
         for student in students:
@@ -170,8 +175,8 @@ while True:
             print("Student Not Exist")
         # TODO 14 find the target student using loops and get student average  if exist , if not print ("Student Not Exist")
 
-    elif selection == 5:
-        student_number = input("Enter Student Number")
+        elif selection == 5:
+         student_number = input("Enter Student Number")
         found = False
         for student in students:
             if student.student_number == student_number:
@@ -184,8 +189,8 @@ while True:
             print("Student Not Exist")
         # TODO 15 ask user to enter course name and course mark then create coures object then append it to target student courses
 
-    else:
-        student_number = input("Enter Student Number: ")
+        else:
+         student_number = input("Enter Student Number: ")
         found = False
         for student in students:
             if student.student_number == student_number:
@@ -202,11 +207,10 @@ while True:
             print("Student Not Exist")
 
         # TODO 16 call a function to exit the program
-        else:
-            print("Exiting the program...")
+        elif selection == 6:
             exit_program()
 
-            
-            def exit_program():
-                sys.exit()
-        pass
+    except ValueError:
+        print("exit")
+
+        
