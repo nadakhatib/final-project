@@ -89,15 +89,18 @@ students = []
 
 while True:
 
-    # TODO 9 handle Exception for selection input
-    selection = int(input("1.Add New Student\n"
-                          "2.Delete Student\n"
-                          "3.Display Student\n"
-                          "4.Get Student Average\n"
-                          "5.Add Course to student with mark.\n"
-                          "6.Exit"))
 
-    if selection == 1:
+    # TODO 9 handle Exception for selection input
+    try:
+        selection = int(input("1. Add New Student\n"
+                              "2. Delete Student\n"
+                              "3. Display Student\n"
+                              "4. Get Student Average\n"
+                              "5. Add Course to Student with Mark\n"
+                              "6. Exit" ))
+
+        if selection == 1:
+    
 
         # TODO 10 make sure that Student number is not exists before
         student_number = input("Enter Student Number")
