@@ -50,12 +50,16 @@ class Student:
 
     # TODO 5 define a method to enroll new course to student courses list
 
+    def enroll_course(self, course):
+        self.courses_list.append(course)
+
     # method to get_student_details as dict
     def get_student_details(self):
         return self.__dict__
 
     # method to get_student_courses
     def get_student_courses(self):
+        return self.courses_list
         # TODO 6 print student courses with their marks
         pass
 
