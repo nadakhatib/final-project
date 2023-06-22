@@ -13,6 +13,7 @@ Delivery Date :22/6/2023
 
 
 import uuid
+import sys
 
 class Course:
     def __init__(self, course_name, course_mark):
@@ -201,4 +202,11 @@ while True:
             print("Student Not Exist")
 
         # TODO 16 call a function to exit the program
+        else:
+            print("Exiting the program...")
+            exit_program()
+
+            
+            def exit_program():
+                sys.exit()
         pass
