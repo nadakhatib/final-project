@@ -104,6 +104,16 @@ while True:
 
         # TODO 10 make sure that Student number is not exists before
         student_number = input("Enter Student Number")
+        exists = False
+        for student in students:
+            if student.student_number == student_number:
+                exists = True
+                break
+
+        if exists:
+            print("Student number exists , enter another number .")
+        else:
+            break
 
         student_name = input("Enter Student Name")
         while True:
